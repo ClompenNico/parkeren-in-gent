@@ -1,0 +1,4 @@
+0. Repository aanmaken
+1. Folder structuur
+2. Push naar master
+3. JavaScript Objecten
