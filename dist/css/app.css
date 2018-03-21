@@ -48,48 +48,75 @@ table {
 }
 
 body {
-    background-color: rgb(238, 238, 238);
+    background-color: fafafa;
 }
 
 h1{
-    font-family: 'Indie Flower', cursive;
-    font-size: 32px;
+    font-family: 'Lobster', 'Indie Flower', cursive;
+    font-size: 36px;
     font-weight: bold;
+    color: #34B19E;
+    margin: 50px;
+    text-align: center;
 }
 
 .parkings{
+    font-family: 'Rubik';
     list-style-type: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    color:white;
+    color:black;
+    margin: 20px 50px;
+
 }
 
 .parkings__parking{
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    background-color: rgb(19, 101, 179);
-    border: 1px solid rgb(20, 9, 87);
-    width: 150 px;
-    height: 150 px;
+    margin: 5px;
+    padding: 30px 15px;
+
+    width: 25%;
+
+    text-align: left;
+    background-color: white;
     align-self: center;
 
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.10);
 }
 
 .danger{
-    background-color: rgb(255, 137, 1);
-    border: 1px solid #E85E00;
+    border-bottom: 3px solid #E85E00;
 }
 
 .error{
-    background-color: #FF0000;
-    border: 1px solid rgb(161, 10, 10);
+    border-bottom: 3px solid rgb(161, 10, 10);
+}
+
+.cool{
+    border-bottom: 3px solid #72eac0;
 }
 
 .parkings__parking__Logo{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+   }
+
+.parkings__parking__name{
+    display: inline-block;
+    width: 49%;
+}
+
+.parkings__parking__info{
+    display: inline-block;
+    width: 49%;
+    text-align: right;
 }

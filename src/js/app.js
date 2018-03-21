@@ -11,6 +11,8 @@
                 let p = new Parking(
                     response[i].name,
                     response[i].description,
+                    response[i].latitude,
+                    response[i].longitude,
                     response[i].parkingStatus.availableCapacity,
                     response[i].parkingStatus.totalCapacity
 
@@ -19,6 +21,7 @@
                 parkingsArray.push(p);
             }
             renderHtml(parkingsArray);
+            aanmakenMap(parkingsArray);
         });
     }
 
@@ -27,7 +30,7 @@
         for (let i = 0, l = parkings.length ; i < l ; i ++){
             bobTheHTMLBuilder += `
                 <li class="parkings__parking ${renderAvailabilityClass(parkings[i].availableCapacity, parkings[i].totalCapacity)}">
-                    <div class="parkings__parking__Logo">P</div>
+                    <div class="parkings__parking__Logo">${parkings[i].name}</div>
                     <div class="parkings__parking__name">${parkings[i].description}</div>
                     <div class="parkings__parking__info">${parkings[i].availableCapacity} / ${parkings[i].totalCapacity}</div>
                 </li>
@@ -48,6 +51,24 @@
         if(result > total / 2){
             return "danger"
         }
+        else
+        {
+            return "cool"
+        }
+    }
+
+    function aanmakenMap(parkings){
+        let pinArray = [];
+        for(let i = 0, l = parkings.length; i<l; i++){
+            let m = new Pin(
+                parkings[i].name,
+                parkings[i].latitude,
+                parkings[i].longitude
+            );
+            pinArray.push(m);
+        }
+        
+        maps.maping(pinArray);
     }
 
 })();
